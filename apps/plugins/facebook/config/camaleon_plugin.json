@@ -1,0 +1,17 @@
+{
+  "title": "Facebook",
+  "descr": "",
+  "key": "facebook",
+  "helpers": [
+    "Plugins::Facebook::MainHelper"
+  ],
+  "hooks": {
+    "on_active": [
+      "facebook_on_active"
+    ],
+    "on_inactive": [
+      "facebook_on_inactive"
+    ]
+    //here you can add all your hooks (read documentation)
+  }
+}
