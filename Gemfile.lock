@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/owen2345/camaleon-post-order-plugin.git
+  revision: 9b0f0e12fb4efb65d58a4089594c5fd092d5ce43
+  specs:
+    camaleon_post_order (0.0.2)
+      rails
+
 PATH
   remote: apps/plugins/facebook
   specs:
@@ -72,6 +79,9 @@ GEM
       tinymce-rails (~> 4.3)
       will_paginate
       will_paginate-bootstrap
+    camaleon_mailchimp (0.0.3.1)
+      gibbon (~> 1.1)
+      rails (~> 4.2, >= 4.2.4)
     cancancan (1.14.0)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -223,9 +233,15 @@ GEM
     font-awesome-rails (4.6.3.0)
       railties (>= 3.2, < 5.1)
     formatador (0.2.5)
+    gibbon (1.2.1)
+      httparty
+      multi_json (>= 1.9.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashie (3.4.4)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.3)
@@ -362,6 +378,8 @@ PLATFORMS
 DEPENDENCIES
   byebug
   camaleon_cms
+  camaleon_mailchimp
+  camaleon_post_order!
   coffee-rails (~> 4.1.0)
   facebook!
   jbuilder (~> 2.0)

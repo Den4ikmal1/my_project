@@ -1,0 +1,26 @@
+
+<div class="panel panel-default">
+    <div class="panel-heading ui-draggable-handle">
+        <h4><span class="fa fa-cogs"></span> </h4>
+    </div>
+    <%= form_tag(action: :saved, :method => "post", :class => "validate-settings") do %>
+        <div class="panel-body">
+
+            <div class="form-group col-md-6">
+            
+
+            <div class="form-group col-md-6">
+                <label>Key</label><br>
+                <%= text_field_tag 'key' %>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Secret</label><br>
+                <%= text_field_tag 'secret' %>
+            </div>
+
+        </div>
+     
+            <button class="btn btn-primary pull-right" type="submit">Saved</button>
+        </div>
+    <% end %>
+</div>

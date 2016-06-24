@@ -19,6 +19,8 @@ Rails.application.routes.draw do
         namespace 'plugins' do
           namespace 'facebook' do
             get 'index' => 'admin#index'
+            get 'settings' => 'admin#settings'
+            post 'saved' => 'admin#saved'
           end
         end
       end

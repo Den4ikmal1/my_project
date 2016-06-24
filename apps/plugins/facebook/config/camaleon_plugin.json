@@ -1,10 +1,12 @@
 {
   "title": "Facebook",
-  "descr": "",
+  "descr": "login with facebook",
   "key": "facebook",
+  "version": "0.1",
   "helpers": [
     "Plugins::Facebook::MainHelper"
   ],
+   "options": [  ],
   "hooks": {
     "on_active": [
       "facebook_on_active"

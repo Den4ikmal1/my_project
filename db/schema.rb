@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623133429) do
+ActiveRecord::Schema.define(version: 20160624084359) do
 
   create_table "cama_comments", force: :cascade do |t|
     t.string   "author"
@@ -162,6 +162,7 @@ ActiveRecord::Schema.define(version: 20160623133429) do
     t.string   "provider"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.string   "uid"
   end
 
   add_index "cama_users", ["email"], name: "index_cama_users_on_email"
