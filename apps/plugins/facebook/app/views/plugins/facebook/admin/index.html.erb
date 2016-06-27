@@ -2,6 +2,14 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4>My Title</h4>
+      <div class="panel-heading ui-draggable-handle">
+        <h4><span class="fa fa-cogs"></span> </h4>
+        <% unless @current_value.blank? %>
+        <h3>Current value:</h3>
+        <h4> App id: <%= @current_value.app_id  %>
+        <h4> App secret: <%= @current_value.app_secret%>
+        <% end %>
+    </div>
     </div>
     <div class="panel-body">
         <p>Plugin ready to use in admin panel!.</p>

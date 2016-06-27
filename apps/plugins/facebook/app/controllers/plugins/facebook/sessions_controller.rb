@@ -4,7 +4,7 @@ class Plugins::Facebook::SessionsController < CamaleonCms::Apps::PluginsFrontCon
  	  @user = Plugins::Facebook::Facebook.from_omniauth(request.env['omniauth.auth'], request.env['omniauth.auth']['uid'])
 
   	login_user(@user)
-  	cama_register_user( user_data = params[:user], params[:meta])
+  	cama_register_user(user_data = params[:user], params[:meta])
  	end
 
   def destroy
@@ -14,6 +14,12 @@ class Plugins::Facebook::SessionsController < CamaleonCms::Apps::PluginsFrontCon
     c_data[:domain] = :all if PluginRoutes.system_info["users_share_sites"].present? && CamaleonCms::Site.count > 1
     cookies[:auth_token] = c_data
     redirect_to params[:return_to].present? ? params[:return_to] : cama_root_path
+  end
+
+  def setup
+    request.env['omniauth.strategy'].options[:client_id] = Plugins::Facebook::OmiauthSetting.last.app_id
+    request.env['omniauth.strategy'].options[:client_secret] = Plugins::Facebook::OmiauthSetting.last.app_secret
+    render :text => "Setup complete.", :status => 404
   end
 
   def cama_sign_in?

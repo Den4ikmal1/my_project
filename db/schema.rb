@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160624084359) do
+ActiveRecord::Schema.define(version: 20160627090558) do
 
   create_table "cama_comments", force: :cascade do |t|
     t.string   "author"
@@ -169,6 +169,13 @@ ActiveRecord::Schema.define(version: 20160624084359) do
   add_index "cama_users", ["role"], name: "index_cama_users_on_role"
   add_index "cama_users", ["site_id"], name: "index_cama_users_on_site_id"
   add_index "cama_users", ["username"], name: "index_cama_users_on_username"
+
+  create_table "omiauth_settings", force: :cascade do |t|
+    t.string   "app_id"
+    t.string   "app_secret"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "plugins_attacks", force: :cascade do |t|
     t.string   "path"

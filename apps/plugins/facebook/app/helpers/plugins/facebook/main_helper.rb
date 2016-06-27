@@ -19,4 +19,8 @@ module Plugins::Facebook::MainHelper
   # plugin: plugin model
   def facebook_on_upgrade(plugin)
   end
+
+  def my_function_for_extra_login(args)
+    args[:html] = render partial: theme_view("plugins/facebook/admin/my_extra_login")
+  end
 end

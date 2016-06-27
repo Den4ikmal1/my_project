@@ -13,7 +13,11 @@
     ],
     "on_inactive": [
       "facebook_on_inactive"
+    ],
+    "user_login_form": [
+      "my_function_for_extra_login"
     ]
+
     //here you can add all your hooks (read documentation)
   }
 }

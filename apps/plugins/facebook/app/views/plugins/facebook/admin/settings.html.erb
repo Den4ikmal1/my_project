@@ -2,7 +2,13 @@
 <div class="panel panel-default">
     <div class="panel-heading ui-draggable-handle">
         <h4><span class="fa fa-cogs"></span> </h4>
+        <% unless @current_value.blank? %>
+        <h3>Current value:</h3>
+        <h4> App id: <%= @current_value.app_id  %>
+        <h4> App secret: <%= @current_value.app_secret%>
+        <% end %>
     </div>
+    <h3>Updated value</h3>
     <%= form_tag(action: :saved, :method => "post", :class => "validate-settings") do %>
         <div class="panel-body">
 
@@ -10,17 +16,18 @@
             
 
             <div class="form-group col-md-6">
-                <label>Key</label><br>
+                <label>App id: </label><br>
                 <%= text_field_tag 'key' %>
             </div>
             <div class="form-group col-md-6">
-                <label>Secret</label><br>
+                <label>App secret:</label><br>
                 <%= text_field_tag 'secret' %>
             </div>
 
         </div>
      
-            <button class="btn btn-primary pull-right" type="submit">Saved</button>
+            <button class="btn btn-primary pull-right" type="submit">Updated</button>
         </div>
     <% end %>
+   
 </div>
